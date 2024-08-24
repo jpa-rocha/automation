@@ -1,8 +1,16 @@
 ---
-- name: Setup Workstation
+- name: Setup workstation
   hosts: workstation
   connection: local
   become: true
+
+  pre_tasks:
+    - name: Update package cache
+      tags: always
+      ansible.builtin.dnf:
+        update_cache: true
+      changed_when: false
+      when: ansible_distribution == "Fedora"
 
   tasks:
     - name: Ping my hosts
