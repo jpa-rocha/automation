@@ -1,13 +1,4 @@
 ---
 - name: Workstation Setup
-  hosts: all
-  connection: local
-  become: true
-
-  tasks:
-    - name: Ping my hosts
-      ansible.builtin.ping:
-
-    - name: Print message
-      ansible.builtin.debug:
-        msg: Hello World
+- ansible.builtin.import_playbook:
+   - playbook.yml
