@@ -1,0 +1,98 @@
+---
+- name: Install xclip
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - xclip
+
+- name: Install curl
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - curl
+
+- name: Install gcc
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - gcc
+
+- name: Install make
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - make
+
+- name: Install clang
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - clang
+
+- name: Install fzf
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - fzf
+
+- name: Install zsh
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - zsh
+
+- name: Install ruby
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - ruby
+
+- name: Install luarocks
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - luarocks
+
+- name: Install bat
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - bat
+
+- name: Install mercurial
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - mercurial
+
+- name: Install riggrep
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - ripgrep
+
+- name: Install fd
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - fd-find
+
+- name: Install npm
+  ansible.builtin.dnf:
+    autoremove: true
+    state: "present"
+    name:
+      - npm

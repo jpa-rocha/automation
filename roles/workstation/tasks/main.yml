@@ -1,4 +1,7 @@
 ---
+- name: Install dependencies
+  ansible.builtin.include_tasks: dependencies/dependencies.yml
+
 - name: Ping my hosts
   ansible.builtin.ping:
 
