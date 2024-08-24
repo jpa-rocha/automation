@@ -1,4 +1,6 @@
-hosts:
-  workstation:
-    ansible_host: localhost
-    ansible_connection: local
+---
+all:
+  hosts:
+    workstation:
+      ansible_host: localhost
+      ansible_connection: local

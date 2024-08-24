@@ -1,6 +1,6 @@
 ---
 - name: Setup Workstation
-- hosts: workstation
+  hosts: workstation
   connection: local
   become: true
 
