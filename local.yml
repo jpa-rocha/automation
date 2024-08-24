@@ -1,4 +1,5 @@
 ---
 - name: Workstation Setup
-- ansible.builtin.import_playbook:
-   - playbook.yml
+  tasks:
+    - name: Import Playbook
+      ansible.builtin.import_playbook: playbook.yml
