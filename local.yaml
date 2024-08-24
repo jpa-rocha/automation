@@ -1,5 +1,0 @@
-- name: "Manage Workstation"
-  hosts: "localhost"
-  tasks:
-    - name: Echo "Hello World"
-      command: echo "Hello world"
