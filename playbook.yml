@@ -12,10 +12,5 @@
       changed_when: false
       when: ansible_distribution == "Fedora"
 
-  tasks:
-    - name: Ping my hosts
-      ansible.builtin.ping:
-
-    - name: Print message
-      ansible.builtin.debug:
-        msg: Hello World
+  roles:
+    - workstation
