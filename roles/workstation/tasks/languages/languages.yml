@@ -1,0 +1,6 @@
+---
+- name: Install ruby
+  ansible.builtin.dnf:
+    state: "present"
+    name:
+      - ruby
