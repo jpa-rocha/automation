@@ -22,13 +22,13 @@
         dest: /tmp/rustup-init.sh
         mode: "0755"
         force: true
-      when: not cargo_stat.stat.exists
+      when: cargo_stat.stat.exists is not defined or not cargo_stat.stat.exists
       tags:
         - rust
 
     - name: Run rust installer
       ansible.builtin.command: "/tmp/rustup-init.sh -y"
-      when: not cargo_stat.stat.exists
+      when: cargo_stat.stat.exists is not defined or not cargo_stat.stat.exists
       tags:
         - rust
       args:
@@ -38,6 +38,6 @@
       ansible.builtin.file:
         path: /tmp/rustup-init.sh
         state: absent
-      when: not cargo_stat.stat.exists
+      when: cargo_stat.stat.exists is not defined or not cargo_stat.stat.exists
       tags:
         - rust
