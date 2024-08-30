@@ -10,10 +10,10 @@
   tags:
     - rust
   block:
-    - name: Check if rust is installed
-      ansible.builtin.command: "cargo --version"
-      register: cargo_exists
-      ignore_errors: true
+    - name: Check if cargo is installed
+      ansible.builtin.stat:
+        path: /usr/local/bin/cargo  # Assuming this is the standard path
+      register: cargo_stat
 
     - name: Download rust installer
       ansible.builtin.get_url:
@@ -21,20 +21,22 @@
         dest: /tmp/rustup-init.sh
         mode: "0755"
         force: true
-      when: cargo_exists.failed
+      when: not cargo_stat.stat.exists
       tags:
         - rust
 
     - name: Run rust installer
       ansible.builtin.command: "/tmp/rustup-init.sh -y"
-      when: cargo_exists is failed
+      when: not cargo_stat.stat.exists
       tags:
         - rust
+      args:
+        creates: /usr/local/bin/cargo  # This prevents the command from running if cargo is already installed
 
     - name: Remove rust installer
       ansible.builtin.file:
         path: /tmp/rustup-init.sh
         state: absent
-      when: cargo_exists.failed
+      when: not cargo_stat.stat.exists
       tags:
         - rust
