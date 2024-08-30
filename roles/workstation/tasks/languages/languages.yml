@@ -21,7 +21,7 @@
         dest: /tmp/rustup-init.sh
         mode: "0755"
         force: true
-      when: cargo_exists is failed
+      when: cargo_exists.failed
       tags:
         - rust
 
@@ -35,6 +35,6 @@
       ansible.builtin.file:
         path: /tmp/rustup-init.sh
         state: absent
-      when: cargo_exists is failed
+      when: cargo_exists.failed
       tags:
         - rust
