@@ -14,6 +14,7 @@
       ansible.builtin.stat:
         path: /usr/local/bin/cargo  # Assuming this is the standard path
       register: cargo_stat
+      ignore_errors: true
 
     - name: Download rust installer
       ansible.builtin.get_url:

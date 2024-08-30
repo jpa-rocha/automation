@@ -59,7 +59,7 @@
     name:
       - mercurial
 
-- name: Install riggrep
+- name: Install ripgrep
   ansible.builtin.dnf:
     state: "present"
     name:
