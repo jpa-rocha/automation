@@ -1,6 +1,6 @@
 ---
-- name: Install dependencies
-  ansible.builtin.include_tasks: dependencies/dependencies.yml
+# - name: Install dependencies
+#   ansible.builtin.include_tasks: dependencies/dependencies.yml
 
 - name: Install languages
   ansible.builtin.include_tasks: languages/languages.yml
