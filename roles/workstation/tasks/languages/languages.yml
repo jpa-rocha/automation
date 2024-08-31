@@ -1,5 +1,6 @@
 ---
 - name: Install ruby
+  become_user: root
   ansible.builtin.dnf:
     state: "present"
     name:
