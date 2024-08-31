@@ -3,7 +3,8 @@
   hosts: workstation
   connection: local
   become: true
-  become_user: "{{ lookup('env', 'USER') }}"
+  become_method: su
+  ansible.builtin.runas: "{{ lookup('env', 'USER') }}"
 
   pre_tasks:
     - name: Update package cache
